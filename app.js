@@ -40,6 +40,7 @@ app.use(
 );
 
 app.get("/", function (req, res) {
+  console.log("被Get到了！");
   if (req.currentUser) {
     res.redirect("/comments");
   } else {
