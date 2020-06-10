@@ -19,25 +19,26 @@
 </head>
 
 <body tabindex="0" role="listitem">
-  <div id="content">
-    <div style="background: white;
+  <div id="content" style="--main_color:<%=main_color%>;">
+    <div style="
+    background: white;
       width: 95%;
       max-width: 800px;
       margin: auto auto;
       border-radius: 5px;
-      border:orange 1px solid;
+      border:<%=main_color%> 1px solid;
       overflow: hidden;
       -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.12);
       box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.18);">
       <header style="overflow: hidden;">
-        <img style="width:100%;z-index: 666;" src="https://ae01.alicdn.com/kf/U5bb04af32be544c4b41206d9a42fcacfd.jpg" />
+        <img style="width:100%;z-index: 666;" src="<%=main_img%>" />
       </header>
       <div style="padding: 5px 20px;">
         <p style="position: relative;
         color: white;
         float: left;
         z-index: 999;
-        background: orange;
+        background: <%=main_color%>;
         padding: 5px 30px;
         margin: -25px auto 0 ;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.30)">
@@ -46,13 +47,13 @@
         <br />
         <center>
           <h3>
-            来自<span style="text-decoration: none;color: orange "><%=name%></span>的回复
+            来自<span style="text-decoration: none;color: <%=main_color%> "><%=name%></span>的回复
           </h3>
         </center>
         <br />
         &nbsp; &nbsp;
         <p>
-          您在<a style="text-decoration: none;color: orange " target="_blank"
+          您在<a style="text-decoration: none;color: <%=main_color%> " target="_blank"
             href="<%=url%>">&nbsp;<%=siteName%>&nbsp;</a>上曾发表的评论：
         </p>
         &nbsp; &nbsp;
@@ -63,7 +64,7 @@
         <p style="
         padding-bottom: 20px;
     ">
-          <span style="color: orange;"><%=name%></span> 给您回复啦~~~：
+          <span style="color: <%=main_color%>;"><%=name%></span> 给您回复啦~~~：
         </p>
         <p>
           <center
@@ -89,8 +90,8 @@
         &nbsp; &nbsp;
         <p style="font-size: 12px;text-align: center;color: #999;" id="hitokoto">
           欢迎常来做客哦！</p>
-        <p style="font-size: 12px;text-align: center;color: #999;">© 2020 <a style="text-decoration:none; color:orange"
-            href="<%=siteUrl%>"> <%=siteName%> </p>
+        <p style="font-size: 12px;text-align: center;color: #999;">© 2020 <a
+            style="text-decoration:none; color:<%=main_color%>" href="<%=siteUrl%>"> <%=siteName%> </p>
         </p>
       </div>
     </div>

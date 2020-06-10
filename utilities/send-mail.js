@@ -53,6 +53,10 @@ exports.notice = (comment) => {
   const text = comment.get("comment");
   const url = process.env.SITE_URL + comment.get("url");
   const comment_id = process.env.COMMENT ? process.env.COMMENT : "";
+  const main_color = process.env.MAIN_COLOR ? process.env.MAIN_COLOR : "orange";
+  const main_img = process.env.MAIN_IMG
+    ? process.env.MAIN_IMG
+    : "https://ae01.alicdn.com/kf/U5bb04af32be544c4b41206d9a42fcacfd.jpg";
 
   if (!process.env.DISABLE_EMAIL) {
     const emailSubject =
@@ -62,6 +66,8 @@ exports.notice = (comment) => {
       siteUrl: process.env.SITE_URL,
       name: name,
       text: text,
+      main_img: main_img,
+      main_color: main_color,
       url: url + comment_id,
       mail: comment.get("mail"),
     });
@@ -185,6 +191,10 @@ exports.send = (currentComment, parentComment) => {
   }
   const emailSubject =
     "📌 哇！「" + process.env.SITE_NAME + "」上有人回复了你啦！快点我！💦";
+  const main_color = process.env.MAIN_COLOR ? process.env.MAIN_COLOR : "orange";
+  const main_img = process.env.MAIN_IMG
+    ? process.env.MAIN_IMG
+    : "https://ae01.alicdn.com/kf/U5bb04af32be544c4b41206d9a42fcacfd.jpg";
   const emailContent = sendTemplate({
     siteName: process.env.SITE_NAME,
     siteUrl: process.env.SITE_URL,
@@ -192,6 +202,8 @@ exports.send = (currentComment, parentComment) => {
     ptext: parentComment.get("comment"),
     name: currentComment.get("nick"),
     text: currentComment.get("comment"),
+    main_img: main_img,
+    main_color: main_color,
     url:
       process.env.SITE_URL +
       currentComment.get("url") +
